@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <style>
+        body{
+            background-color: #22262a;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        thead{
+            background-color: #343A40;
+            text-align:start;
+            /* font-size: large; */
+            font-weight: bold;
+        }
+
+        tr,td {
+            padding: 10px 20px;
+            background-color: #343A40;
+        }
+
+        button{
+            padding: 10px 20px;
+            background-color: #22262a;
+            color: white;
+            border: none;
+        }
+
+        button:hover{
+            background-color: #2b2f34;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: white;">Student Information</h1>
+    <table id="dataTable" style="color: white;margin: auto;">
+        <thead>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>Address</td>
+            <td>Gender</td>
+            <td>Course</td>
+            <td>Action</td>
+        </thead>
+        <tbody id="tablebody">
+            
+        </tbody>
+    </table>
+    
+    
+</body>
+<script src="fetch-data.js"></script>
+<!-- <script src="update.js"></script> -->
+</html>
