@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .inline-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .inline-group input[type="radio"],
+        .inline-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+<form id="registrationForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+
+    <label>Gender:</label>
+    <div class="inline-group">
+        MALE<input type="radio" id="male" name="gender" value="male" required>
+        FEMALE<input type="radio" id="female" name="gender" value="female" required>
+        OTHER<input type="radio" id="other" name="gender" value="other" required>
+      
+    </div>
+
+    <label>Courses:</label>
+    <div class="inline-group">
+        HTML<input type="checkbox" id="html" name="course" value="html">
+        CSS<input type="checkbox" id="css" name="course" value="css">
+        PHP<input type="checkbox" id="php" name="course" value="php">
+        JAVASCRIPT<input type="checkbox" id="javascript" name="course" value="javascript">
+        JAVA<input type="checkbox" id="java" name="course" value="java">
+        PYTHON<input type="checkbox" id="python" name="course" value="python">
+        
+    </div>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
