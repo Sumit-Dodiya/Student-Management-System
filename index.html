@@ -136,8 +136,42 @@
 
         document.getElementById("registrationForm").reset();
 
+        let data = {
+            name : name,
+            email : email,
+            phone : phone,
+            address : address,
+            gender : gender,
+            course : newCourses,
+            password : password
+        }
+
+        console.log(JSON.stringify(data));
+
+        sendData(data);
+
     }
 
+    function sendData(data){
+
+        fetch("student.php",{
+            method:"post",
+            headers : {
+                "content-type" : "application/json",
+            },
+            body : JSON.stringify(data),
+        })
+        .then((res) =>{return res.json();})
+        .then((responseData) => {
+            console.log(responseData);
+            alert("Data sent successfully!");
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+
+
+    }
 
 
 </script>
