@@ -47,8 +47,11 @@ function editRecord(id) {
         console.error("Gender value not found or incorrect:", data[0].gender);
       }
       // Set course checkboxes
+
+      const courses = data[0].course.split(','); // Convert course string to an array
+      console.log(courses)
       document.querySelectorAll('input[name="course"]').forEach((checkbox) => {
-        checkbox.checked = data[0].course.includes(checkbox.value);
+        checkbox.checked = courses.includes(checkbox.value);
       });
 
       document.getElementById("updatePassword").value = data[0].password;
@@ -60,7 +63,7 @@ function editRecord(id) {
 }
 
 //send updated data
-document.getElementById("updateForm").addEventListener("submit", () => {
+document.getElementById("updateForm").addEventListener("submit", (event) => {
   event.preventDefault();
   let courses = [];
   document
@@ -93,7 +96,8 @@ document.getElementById("updateForm").addEventListener("submit", () => {
       console.log(result.message);
       alert(result.message); // Show success or error message
       document.getElementById("editForm").style.display = "none"; // Hide the edit form
-        fetchdata(); // Refresh the table data
+        // fetchdata(); // Refresh the table data
+        window.location.reload();
       return false;
     })
     .catch((error) => console.error("Error updating record:", error));
